@@ -1,0 +1,28 @@
+from operations import add, subtract, multiply, divide
+from utils import get_user_number, get_operation
+
+number_1 = get_user_number()
+operation = get_operation()
+number_2 = get_user_number()
+
+if operation == "+":
+    result = add(number_1, number_2)
+    print("Result:", number_1, "+", number_2, "=", result)
+
+elif operation == "-":
+    result = subtract(number_1,number_2)
+    print("Result:", number_1, "-", number_2, "=", result)
+
+elif operation == "*":
+    result = multiply(number_1, number_2)
+    print("Result:", number_1, "*", number_2, "=", result)
+
+elif operation == "/":
+    while number_2 == 0:
+        print("Not possible to divide by zero, please input the second number again.")
+        number_2 = get_user_number()
+
+    result = divide(number_1, number_2)
+    print("Result:", number_1, "/", number_2, "=", result)
+
+
